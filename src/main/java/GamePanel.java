@@ -35,11 +35,11 @@ public class GamePanel extends JPanel {
     }
 
     public Player getPlayerX() {
-        return new Player("X");
+        return new Player();
     }
 
     public Player getPlayerO() {
-        return new Player("O");
+        return new Player();
     }
 
     boolean checkWin(){
@@ -78,11 +78,11 @@ public class GamePanel extends JPanel {
 
         disableAllPanels();
         textField.setText(squarePanel.getLabel() + "wins");
-        gameOver(squarePanel.getLabel() + "Wins");
+//        gameOver(squarePanel.getLabel() + "Wins");
     }
 
-    void gameOver(String s) {
-    }
+//    void gameOver(String s) {
+//    }
 
     void disableAllPanels() {
         for (int row = 0; row < 3; row++){

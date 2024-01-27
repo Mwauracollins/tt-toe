@@ -1,12 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Gui {
-    private JFrame gameFrame;
-    private GamePanel gamePanel;
-    private JMenuBar gameMenuBar;
+    private final JFrame gameFrame;
+    private final GamePanel gamePanel;
+    private final JMenuBar gameMenuBar;
 
     private static final Dimension GAME_FRAME_DIMENSION = new Dimension(600, 600);
     Gui(){
@@ -34,20 +32,14 @@ public class Gui {
         final JMenu newGameMenu = new JMenu("New Game");
 
         final JMenuItem twoPlayer = new JMenuItem("Two Player");
-        twoPlayer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TODO Add Action Listener for creating 1 v 1 play mode
-            }
+        twoPlayer.addActionListener(e -> {
+            //TODO Add Action Listener for creating 1 v 1 play mode
         });
         newGameMenu.add(twoPlayer);
 
         final JMenuItem computerPlayer = new JMenuItem("Play Against AI");
-        computerPlayer.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TODO Game mode against AI
-            }
+        computerPlayer.addActionListener(e -> {
+            //TODO Game mode against AI
         });
         newGameMenu.add(computerPlayer);
 
@@ -55,12 +47,9 @@ public class Gui {
     }
 
     public static void main(String[] args) {
-        Runnable r = new Runnable() {
-            @Override
-            public void run() {
-                Gui gui = new Gui();
+        Runnable r = () -> {
+            Gui gui = new Gui();
 
-            }
         };
         SwingUtilities.invokeLater(r);
     }

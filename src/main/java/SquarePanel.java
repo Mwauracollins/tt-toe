@@ -4,9 +4,9 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class SquarePanel extends JPanel {
-    private int row;
-    private int column;
-    private JLabel label;
+    private final int row;
+    private final int column;
+    private final JLabel label;
     private static final Dimension SQUARE_PANEL_DIMENSION = new Dimension(100, 100);
 
     SquarePanel(GamePanel gamePanel, int row, int column){
@@ -65,7 +65,7 @@ public class SquarePanel extends JPanel {
                 disablePanel();
                 if (gamePanel.checkWin()){
                     gamePanel.disableAllPanels();
-                    gamePanel.gameOver(currentPlayer.getSymbol() + "Wins");
+//                    gamePanel.gameOver(currentPlayer.getSymbol() + "Wins");
                 }
             }
             else {
